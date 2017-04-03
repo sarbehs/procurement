@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ItemMapper">
+	<resultMap id="BaseResultMap" type="com.model.Item">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="sku" jdbcType="VARCHAR" property="sku" />
+		<result column="price" jdbcType="DOUBLE" property="price" />
+		<result column="catalog" jdbcType="INTEGER" property="catalog" />
+		<result column="unit" jdbcType="VARCHAR" property="unit" />
+		<result column="supplier" jdbcType="VARCHAR" property="supplier" />
+	</resultMap>
+	<insert id="insert" parameterType="com.model.Item">
+		insert into item (id, name, sku,
+		price,
+		catalog, unit, supplier
+		)
+		values (#{id,jdbcType=INTEGER},
+		#{name,jdbcType=VARCHAR},
+		#{sku,jdbcType=VARCHAR},
+		#{price,jdbcType=DOUBLE},
+		#{catalog,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR},
+		#{supplier,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.model.Item">
+		insert into item
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="sku != null">
+				sku,
+			</if>
+			<if test="price != null">
+				price,
+			</if>
+			<if test="catalog != null">
+				catalog,
+			</if>
+			<if test="unit != null">
+				unit,
+			</if>
+			<if test="supplier != null">
+				supplier,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="sku != null">
+				#{sku,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				#{price,jdbcType=DOUBLE},
+			</if>
+			<if test="catalog != null">
+				#{catalog,jdbcType=INTEGER},
+			</if>
+			<if test="unit != null">
+				#{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="supplier != null">
+				#{supplier,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<select id="getAll" resultMap="BaseResultMap">
+		select * from item
+	</select>
+	
+	<!-- 
+	<select id="selectById" resultMap="BaseResultMap">
+		select * from item where id =
+		#{id,jdbcType=INTEGER}
+	</select>
+	 -->
+	 
+	<select id="select" parameterType="com.model.Item" resultMap="BaseResultMap">
+		select * from item
+		<trim prefix="WHERE" prefixOverrides="AND |OR">
+			<if test="id != null">
+				id=#{id,jdbcType=INTEGER}
+			</if>
+			<if test="name != null">
+				AND name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="sku != null">
+				AND sku=#{sku,jdbcType=VARCHAR}
+			</if>
+			<if test="price != null">
+				AND price=#{price,jdbcType=DOUBLE}
+			</if>
+			<if test="catalog != null">
+				AND catalog=#{catalog,jdbcType=INTEGER}
+			</if>
+			<if test="unit != null">
+				AND unit=#{unit,jdbcType=VARCHAR}
+			</if>
+			<if test="supplier != null">
+				AND supplier=#{supplier,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</select>
+
+	<update id="update" parameterType="com.model.Item">
+		update item
+		<set>
+			<if test="name != null">
+				name=#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="sku != null">
+				sku=#{sku,jdbcType=VARCHAR},
+			</if>
+			<if test="price != null">
+				price=#{price,jdbcType=DOUBLE},
+			</if>
+			<if test="catalog != null">
+				catalog=#{catalog,jdbcType=INTEGER},
+			</if>
+			<if test="unit != null">
+				unit=#{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="supplier != null">
+				supplier=#{supplier,jdbcType=VARCHAR}
+			</if>
+		</set>
+		where id=#{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="com.model.Item">
+		delete from item
+		<trim prefix="WHERE" prefixOverrides="AND |OR">
+			<if test="id != null">
+				id=#{id,jdbcType=INTEGER}
+			</if>
+			<if test="name != null">
+				AND name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="sku != null">
+				AND sku=#{sku,jdbcType=VARCHAR}
+			</if>
+			<if test="price != null">
+				AND price=#{price,jdbcType=DOUBLE}
+			</if>
+			<if test="catalog != null">
+				AND catalog=#{catalog,jdbcType=INTEGER}
+			</if>
+			<if test="unit != null">
+				AND unit=#{unit,jdbcType=VARCHAR}
+			</if>
+			<if test="supplier != null">
+				AND supplier=#{supplier,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</delete>
+
+</mapper>

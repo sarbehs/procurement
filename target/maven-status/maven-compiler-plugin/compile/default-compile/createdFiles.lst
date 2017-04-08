@@ -8,6 +8,7 @@ com\rest\core\Constants.class
 com\rest\resources\OrderResource.class
 com\service\ItemService.class
 com\rest\core\ProcurementApplication.class
+com\service\UserService.class
 com\service\ItemServiceImp.class
 com\service\StaticService.class
 com\dao\ProUserMapper.class
@@ -15,4 +16,6 @@ com\service\OrderServiceImp.class
 com\model\ProUser.class
 com\dao\ItemMapper.class
 com\dao\ProOrderMapper.class
+com\rest\resources\UserResource.class
 com\model\ProOrder.class
+com\service\UserServiceImp.class

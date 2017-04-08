@@ -227,6 +227,7 @@
 
 	</dependencies>
 	<build>
+	    <defaultGoal>compile</defaultGoal>
 		<finalName>procurement</finalName>
 
 		<plugins>

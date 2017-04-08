@@ -60,4 +60,79 @@
       </if>
     </trim>
   </insert>
+  
+	<select id="getAll" resultMap="BaseResultMap">
+		select * from pro_user
+	</select>
+	 
+	<select id="select" parameterType="com.model.ProUser" resultMap="BaseResultMap">
+		select * from pro_user
+		<trim prefix="WHERE" prefixOverrides="AND |OR">
+			<if test="id != null">
+				id=#{id,jdbcType=INTEGER}
+			</if>
+			<if test="username != null">
+				AND username=#{username,jdbcType=VARCHAR}
+			</if>
+			<if test="phone != null">
+				AND phone=#{phone,jdbcType=VARCHAR}
+			</if>
+			<if test="email != null">
+				AND email=#{email,jdbcType=VARCHAR}
+			</if>
+			<if test="passwd != null">
+				AND passwd=#{passwd,jdbcType=VARCHAR}
+			</if>
+			<if test="department != null">
+				AND department=#{department,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</select>
+
+	<update id="update" parameterType="com.model.ProUser">
+		update pro_user
+		<set>
+			<if test="username != null">
+				username=#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone=#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				email=#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="passwd != null">
+				passwd=#{passwd,jdbcType=VARCHAR},
+			</if>
+			<if test="department != null">
+				department=#{department,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id=#{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="com.model.ProUser">
+		delete from pro_user
+		<trim prefix="WHERE" prefixOverrides="AND |OR">
+			<if test="id != null">
+				id=#{id,jdbcType=INTEGER}
+			</if>
+			<if test="username != null">
+				AND username=#{username,jdbcType=VARCHAR}
+			</if>
+			<if test="phone != null">
+				AND phone=#{phone,jdbcType=VARCHAR}
+			</if>
+			<if test="email != null">
+				AND email=#{email,jdbcType=VARCHAR}
+			</if>
+			<if test="passwd != null">
+				AND passwd=#{passwd,jdbcType=VARCHAR}
+			</if>
+			<if test="department != null">
+				AND department=#{department,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</delete>  
+  
 </mapper>

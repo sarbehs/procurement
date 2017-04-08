@@ -5,6 +5,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import com.rest.resources.ItemResource;
 import com.rest.resources.OrderResource;
 import com.rest.resources.StaticResource;
+import com.rest.resources.UserResource;
 
 public class ProcurementApplication extends ResourceConfig {
 	public ProcurementApplication() {
@@ -16,5 +17,6 @@ public class ProcurementApplication extends ResourceConfig {
 		register(ItemResource.class);
 		register(OrderResource.class);
 		register(StaticResource.class);
+		register(UserResource.class);
 	}
 }

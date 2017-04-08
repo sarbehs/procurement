@@ -16,7 +16,7 @@ public class ItemDaoTest {
 	// @Test
 	public void testSelect() {
 		SqlSession sqlSession = getSessionFactory().openSession();
-		ItemMapper im = (ItemMapper) sqlSession.getMapper(ItemMapper.class);
+		ItemMapper im = sqlSession.getMapper(ItemMapper.class);
 
 		Item item = new Item();
 		item.setId(2);
@@ -31,7 +31,7 @@ public class ItemDaoTest {
 	// @Test
 	public void testDelte() {
 		SqlSession sqlSession = getSessionFactory().openSession();
-		ItemMapper im = (ItemMapper) sqlSession.getMapper(ItemMapper.class);
+		ItemMapper im = sqlSession.getMapper(ItemMapper.class);
 
 		Item item = new Item();
 		item.setId(2);
@@ -44,7 +44,7 @@ public class ItemDaoTest {
 	@Test
 	public void testUpdate() {
 		SqlSession sqlSession = getSessionFactory().openSession();
-		ItemMapper im = (ItemMapper) sqlSession.getMapper(ItemMapper.class);
+		ItemMapper im = sqlSession.getMapper(ItemMapper.class);
 
 		Item item = new Item();
 		item.setId(1);
@@ -57,7 +57,7 @@ public class ItemDaoTest {
 	@Test
 	public void test() {
 		SqlSession sqlSession = getSessionFactory().openSession();
-		ItemMapper im = (ItemMapper) sqlSession.getMapper(ItemMapper.class);
+		ItemMapper im = sqlSession.getMapper(ItemMapper.class);
 
 		/*
 		 * DisSystemMonitoring d = new DisSystemMonitoring();

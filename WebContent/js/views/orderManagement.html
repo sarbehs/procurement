@@ -1,0 +1,120 @@
+<div id="orderMg-tabs-container">
+  <div id="orderMg-tabs" data-bind="ojComponent:{component: 'ojTabs'}">
+    <!-- tab bar -->
+    <ul>
+      <li><span>Opened Order</span></li>
+      <li><span>Closed Order</span></li>
+    </ul>
+
+    <!-- tab contents -->
+    <div id="orderMg-tabs-open">
+      <div>
+        <a href="#" data-bind="click: acceptAll"><span class="oj-fwk-icon-status-confirmation oj-fwk-icon" title="Accept All"></span></a>
+		<a href="#" data-bind="click: rejectAll"><span class="oj-fwk-icon-status-error oj-fwk-icon" title="Reject All"></span></a>                    
+      </div>
+      <div align="center">
+        <input oninput="filter(this, 'orderMg-tabs-open-listview')" placeHolder="Search for ..."
+  		    data-bind="ojComponent: {component: 'ojInputText'}">
+      </div>
+    
+      <ul id="orderMg-tabs-open-listview" aria-label="Opened Order List" 
+         data-bind="ojComponent: {component: 'ojListView', data: dataSourceOpen, item: {template: 'order_template_open'}, selectionMode: 'single'}">
+      </ul>
+    </div>
+    
+    <div id="orderMg-tabs-close">
+      <div align="center">
+        <input oninput="filter(this, 'orderMg-tabs-close-listview')" placeHolder="Search for ..."
+  		    data-bind="ojComponent: {component: 'ojInputText'}">
+      </div>
+      
+      <ul id="orderMg-tabs-close-listview" aria-label="Closed Order List" 
+         data-bind="ojComponent: {component: 'ojListView', data: dataSourceClose, item: {template: 'order_template_close'}, selectionMode: 'single'}">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div>
+  <script type="text/html" id="order_template_open">
+    <li data-bind="attr: {id: $data['name']}">
+        <div class="oj-flex">
+            <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                <img data-bind="attr: {src: 'css/images/avatar_24px_2x.png', alt: name}"></img>
+            </div>
+            <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                <div class="oj-flex row">
+                    <div class="oj-lg-12">
+                        <span class="header" data-bind="text: name"></span>
+                    </div>
+                </div>
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Time: </b><span data-bind="text: version"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Price: </b><span data-bind="text: nodes"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Count: </b><span data-bind="text: cpu"></span></span>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Status: </b><span data-bind="text: type"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Address: </b><span data-bind="text: balancer"></span></span>
+                    </div>
+                    <div class="oj-lg-3 oj-md-3 oj-sm-12">
+                        <span class="data"><b>Justification: </b><span data-bind="text: memory + ' GB'"></span></span>
+                    </div>
+                    <div class="oj-lg-1 oj-md-1 oj-sm-12">
+                        <a href="#" data-bind="click: $root.acceptOrder($data['name'])"><span class="oj-fwk-icon-status-confirmation oj-fwk-icon" title="Accept"></span></a>
+						<a href="#" data-bind="click: $root.rejectOrder($data['name'])"><span class="oj-fwk-icon-status-error oj-fwk-icon" title="Reject"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+  </script>  
+  
+  <script type="text/html" id="order_template_close">
+    <li data-bind="attr: {id: $data['name']}">
+        <div class="oj-flex">
+            <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                <img data-bind="attr: {src: 'css/images/avatar_24px_2x.png', alt: name}"></img>
+            </div>
+            <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                <div class="oj-flex row">
+                    <div class="oj-lg-12">
+                        <span class="header" data-bind="text: name"></span>
+                    </div>
+                </div>
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Time: </b><span data-bind="text: version"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Price: </b><span data-bind="text: nodes"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Count: </b><span data-bind="text: cpu"></span></span>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Status: </b><span data-bind="text: type"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Address: </b><span data-bind="text: balancer"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Justification: </b><span data-bind="text: memory + ' GB'"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+  </script>
+</div>

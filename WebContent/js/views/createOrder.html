@@ -1,0 +1,96 @@
+<div>
+  <h1 class="oj-sm-only-hide">Create Order</h1>
+</div>
+<hr>
+<br>
+
+<div id="createOrder-content">
+  <div id="createOrder-form-container">
+    <div class="oj-form-layout">
+      <div class="oj-form oj-form-no-dividers oj-md-labels-inline oj-lg-form-across
+                   oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-lg-odd-cols-2 oj-lg-even-cols-4">  
+        <div class="oj-flex">
+          <div class="oj-flex-item">
+            <label for="createOrder-firstName">First Name</label>
+          </div>
+          <div class="oj-flex-item">
+            <input id="createOrder-firstName" 
+                 data-bind="ojComponent: {component: 'ojInputText', required: true, value: firstNameValue}">
+          </div>
+          <div class="oj-flex-item">
+            <label for="createOrder-lastName">Last Name</label>
+          </div>
+          <div class="oj-flex-item">
+            <input id="createOrder-lastName" 
+                 data-bind="ojComponent: {component: 'ojInputText', required: true, value: lastNameValue}">
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item">
+            <label for="createOrder-phone">Phone</label>
+          </div>
+          <div class="oj-flex-item">
+            <input id="createOrder-phone" data-bind="ojComponent: {component: 'ojInputText', value: phoneValue}">
+          </div>
+          <div class="oj-flex-item">
+            <label for="createOrder-email">Email</label>
+          </div>
+          <div class="oj-flex-item">
+            <input id="createOrder-email" 
+                 data-bind="ojComponent: {component: 'ojInputText', required: true, value: emailValue}">
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item">
+            <label for="createOrder-address">Address</label>
+          </div>
+          <div class="oj-flex-item">
+            <textarea id="createOrder-address" rows="3"
+                 data-bind="ojComponent: {component: 'ojTextArea', required: true, value: addressValue}"></textarea>
+          </div>
+          <div class="oj-flex-item">
+            <label for="createOrder-justification">Justification</label>
+          </div>
+          <div class="oj-flex-item">
+            <textarea id="createOrder-justification" rows="3"
+                 data-bind="ojComponent: {component: 'ojTextArea', required: true, value: justificationValue}"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div id="createOrder-table-container">
+        <table id="createOrder-table" summary="Goods List" aria-label="Goods Table"
+         data-bind="ojComponent: {component: 'ojTable', 
+                                  data: dataSource, 
+                                  columnsDefault: {sortable: 'enabled'}, 
+                                  columns: [{headerText: 'Name', 
+                                             field: 'name'},
+                                            {headerText: 'Supplier', 
+                                             field: 'supplier'},
+                                            {headerText: 'Color', 
+                                             renderer: colorRenderer},
+                                            {headerText: 'Price', 
+                                             field: 'price',
+                                             className: 'self-price'},
+                                            {headerText: 'Count', 
+                                             renderer: countRenderer},
+                                            {headerText: 'Total', 
+                                             renderer: totalRenderer,
+                                             className: 'self-total'},
+                                            {headerStyle: 'display: none', 
+                                             style: 'display: none',
+                                             renderer: idRenderer}],
+                                            rootAttributes: {'style':'height: 300px; width: 100%; overflow: auto;'}}">
+        </table>
+  </div>
+
+  <br>
+  <div align="right">
+    <b>Total&nbsp;Price:&nbsp;</b><span id="createOrder-totalPrice"></span>
+    <button id="createOrder-submit" style="margin-left: 10px;" data-bind="click: submit, ojComponent:
+          {component: 'ojButton', label: 'Submit'}"> </button>
+  </div>
+</div>

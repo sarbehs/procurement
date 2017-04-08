@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ItemServiceTest" time="0.757" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="ItemServiceTest" time="0.771" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Users\erwwang\workspace\cs106a\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2858530936854034331.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\erwwang\workspace\cs106a\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5315199384330832173.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/lib/amd64;D:\app\orcl\product\12.1.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Users\erwwang\apache-maven-3.3.9\bin;C:\Program Files\Java\jre1.8.0_111\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Lenovo\Fingerprint Manager Pro\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files\Git\cmd;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files\nodejs\;C:\Program Files\Docker Toolbox;C:\Users\erwwang\AppData\Local\atom\bin;C:\Users\erwwang\AppData\Roaming\npm;C:\Users\erwwang\eclipse-jee-neon-1a-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,5 +62,5 @@
     <property name="user.region" value="US"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ItemServiceTest" name="test" time="0.757"/>
+  <testcase classname="ItemServiceTest" name="test" time="0.771"/>
 </testsuite>

@@ -1,0 +1,49 @@
+<div align="center">
+  <input oninput="filter(this, 'myOrder-listview')" placeHolder="Search for ..."
+  		data-bind="ojComponent: {component: 'ojInputText'}">
+</div>
+
+<div>
+  <ul id="myOrder-listview" aria-label="Order List" 
+       data-bind="ojComponent: {component: 'ojListView', data: dataSource, item: {template: 'order_template'}, selectionMode: 'single'}">
+  </ul>
+
+  <script type="text/html" id="order_template">
+    <li data-bind="attr: {id: $data['name']}">
+        <div class="oj-flex">
+            <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                <img data-bind="attr: {src: 'css/images/avatar_24px_2x.png', alt: name}"></img>
+            </div>
+            <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                <div class="oj-flex row">
+                    <div class="oj-lg-12">
+                        <span class="header" data-bind="text: name"></span>
+                    </div>
+                </div>
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Time: </b><span data-bind="text: version"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Price: </b><span data-bind="text: nodes"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Total Count: </b><span data-bind="text: cpu"></span></span>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Status: </b><span data-bind="text: type"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Address: </b><span data-bind="text: balancer"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Justification: </b><span data-bind="text: memory + ' GB'"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+  </script>
+</div>
